@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOMINO Glass Kitchen — Chiến lược Fanpage 2024</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700;900&family=Inter:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:     #1C1A18;
+    --ink-2:   #2E2C29;
+    --ink-3:   #4A4845;
+    --stone:   #7A7875;
+    --mist:    #B8B4AF;
+    --smoke:   #E8E4DF;
+    --linen:   #F4F1EC;
+    --white:   #FDFCFB;
+    --gold:    #A68B5B;
+    --gold-lt: #C9AC7A;
+    --serif:   'Playfair Display', Georgia, serif;
+    --sans:    'DM Sans', 'Inter', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--white);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--white);
+    border-bottom: 1px solid var(--smoke);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px; height: 64px;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px;
+  }
+  .nav-logo-mark {
+    width: 32px; height: 32px;
+    background: var(--ink);
+    border-radius: 2px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .nav-logo-mark svg { width: 20px; height: 20px; }
+  .nav-brand {
+    font-family: var(--serif);
+    font-size: 15px; font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--ink);
+  }
+  .nav-sub {
+    font-size: 9px; letter-spacing: 0.18em; color: var(--stone);
+    text-transform: uppercase; display: block; margin-top: 1px;
+  }
+  .nav-links {
+    display: flex; gap: 32px; list-style: none;
+  }
+  .nav-links a {
+    font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--stone); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-badge {
+    font-size: 11px; background: var(--ink); color: var(--white);
+    padding: 5px 14px; border-radius: 2px; letter-spacing: 0.06em;
+  }
+
+  /* SECTIONS */
+  section { padding: 120px 48px; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding-top: 64px;
+    background: var(--ink);
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: 0; right: 0;
+    width: 45%; height: 100%;
+    background: var(--ink-2);
+    clip-path: polygon(8% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  .hero-inner {
+    max-width: 1100px; margin: 0 auto;
+    position: relative; z-index: 2;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  }
+  .hero-eyebrow {
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 28px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: block; width: 32px; height: 1px; background: var(--gold);
+  }
+  .hero-title {
+    font-family: var(--serif);
+    font-size: clamp(42px, 5vw, 68px);
+    font-weight: 700; line-height: 1.08;
+    color: var(--white);
+    margin-bottom: 24px;
+  }
+  .hero-title em { color: var(--gold); font-style: normal; }
+  .hero-desc {
+    font-size: 15px; color: var(--mist); line-height: 1.75;
+    margin-bottom: 44px; max-width: 440px;
+  }
+  .hero-meta {
+    display: flex; gap: 40px;
+  }
+  .hero-stat-val {
+    font-family: var(--serif);
+    font-size: 32px; font-weight: 700; color: var(--white);
+    display: block;
+  }
+  .hero-stat-lbl {
+    font-size: 11px; letter-spacing: 0.08em; color: var(--stone);
+    text-transform: uppercase;
+  }
+  .hero-logo-wrap {
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .hero-logo-ring {
+    width: 360px; height: 360px; border-radius: 50%;
+    border: 1px solid rgba(166,139,91,0.2);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .hero-logo-ring::before {
+    content: ''; position: absolute;
+    width: 300px; height: 300px; border-radius: 50%;
+    border: 1px solid rgba(166,139,91,0.12);
+  }
+  .hero-logo-inner {
+    width: 200px; height: 200px;
+    background: var(--white);
+    border-radius: 4px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 8px;
+  }
+  .hero-logo-inner img { width: 140px; }
+
+  /* POSITIONING STATEMENT */
+  .positioning {
+    background: var(--linen);
+  }
+  .positioning-grid {
+    display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start;
+  }
+  .section-label {
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-label::before {
+    content: ''; display: block; width: 20px; height: 1px; background: var(--gold);
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(28px, 3vw, 42px);
+    font-weight: 700; line-height: 1.2;
+    color: var(--ink); margin-bottom: 20px;
+  }
+  .pos-statement {
+    font-family: var(--serif);
+    font-size: 22px; font-weight: 400; line-height: 1.6;
+    color: var(--ink-2);
+    padding: 32px; border-left: 2px solid var(--gold);
+    margin-bottom: 32px;
+  }
+  .pos-statement em { color: var(--gold); font-style: normal; }
+  .rules-list { display: flex; flex-direction: column; gap: 12px; }
+  .rule-item {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 14px 0; border-bottom: 1px solid var(--smoke);
+  }
+  .rule-no {
+    font-size: 10px; font-weight: 600; color: var(--gold);
+    letter-spacing: 0.08em; min-width: 24px; padding-top: 3px;
+  }
+  .rule-text { font-size: 14px; color: var(--ink-3); line-height: 1.55; }
+  .rule-text strong { color: var(--ink); font-weight: 500; }
+
+  /* PAIN LOOP */
+  .pain { background: var(--white); }
+  .pain-intro {
+    font-size: 16px; color: var(--ink-3); line-height: 1.75;
+    max-width: 560px; margin-bottom: 60px;
+  }
+  .pain-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px;
+    background: var(--smoke); border: 1px solid var(--smoke);
+  }
+  .pain-cell {
+    background: var(--white);
+    padding: 36px 32px;
+    position: relative;
+  }
+  .pain-cell:hover { background: var(--linen); }
+  .pain-num {
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 16px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .pain-num::after { content: ''; flex: 1; height: 1px; background: var(--smoke); }
+  .pain-surface {
+    font-size: 11px; color: var(--stone); margin-bottom: 8px;
+    letter-spacing: 0.04em;
+  }
+  .pain-core {
+    font-family: var(--serif);
+    font-size: 18px; font-weight: 500; line-height: 1.4;
+    color: var(--ink); margin-bottom: 14px;
+  }
+  .pain-signal {
+    font-size: 13px; color: var(--stone); line-height: 1.55;
+    padding-top: 14px; border-top: 1px solid var(--smoke);
+  }
+
+  /* CONTENT MATRIX */
+  .matrix { background: var(--ink); }
+  .matrix .section-title { color: var(--white); }
+  .matrix .section-label { color: var(--gold-lt); }
+  .matrix .section-label::before { background: var(--gold-lt); }
+  .matrix-desc {
+    font-size: 15px; color: var(--mist); line-height: 1.75;
+    max-width: 580px; margin-bottom: 56px;
+  }
+  .matrix-table {
+    width: 100%; border-collapse: collapse;
+  }
+  .matrix-table th {
+    font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--stone); padding: 0 0 16px; text-align: left;
+    border-bottom: 1px solid var(--ink-3);
+  }
+  .matrix-table td {
+    padding: 22px 0; border-bottom: 1px solid var(--ink-3);
+    vertical-align: top;
+  }
+  .matrix-table tr:last-child td { border-bottom: none; }
+  .mt-group {
+    font-family: var(--serif);
+    font-size: 16px; font-weight: 500; color: var(--white);
+    margin-bottom: 4px;
+  }
+  .mt-pct {
+    font-size: 11px; color: var(--gold); letter-spacing: 0.04em;
+  }
+  .mt-formula {
+    display: inline-block;
+    font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+    background: var(--ink-2); color: var(--gold-lt);
+    padding: 4px 10px; border-radius: 2px; margin-bottom: 8px;
+  }
+  .mt-how { font-size: 13px; color: var(--mist); line-height: 1.6; }
+  .mt-key {
+    font-size: 12px; color: var(--gold); font-style: italic;
+    margin-top: 8px; padding-top: 8px;
+    border-top: 1px solid var(--ink-3);
+  }
+  th:first-child, td:first-child { width: 20%; padding-right: 24px; }
+  th:nth-child(2), td:nth-child(2) { width: 38%; padding-right: 24px; }
+  th:last-child, td:last-child { width: 42%; }
+
+  /* EDUCATION LADDER */
+  .ladder { background: var(--linen); }
+  .ladder-track {
+    display: flex; gap: 2px; margin-top: 56px;
+  }
+  .ladder-step {
+    flex: 1; padding: 36px 28px;
+    background: var(--white);
+    border-top: 3px solid transparent;
+    transition: border-color 0.2s;
+    position: relative;
+  }
+  .ladder-step:nth-child(1) { border-color: var(--smoke); }
+  .ladder-step:nth-child(2) { border-color: var(--mist); }
+  .ladder-step:nth-child(3) { border-color: var(--gold-lt); }
+  .ladder-step:nth-child(4) { border-color: var(--gold); }
+  .ladder-step:hover { background: var(--linen); }
+  .step-num {
+    font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--stone); margin-bottom: 20px;
+  }
+  .step-name {
+    font-family: var(--serif);
+    font-size: 17px; font-weight: 600; color: var(--ink);
+    margin-bottom: 10px; line-height: 1.3;
+  }
+  .step-desc {
+    font-size: 13px; color: var(--ink-3); line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .step-example {
+    font-size: 12px; color: var(--stone); line-height: 1.55;
+    padding: 12px; background: var(--linen);
+    border-left: 2px solid var(--gold);
+    font-style: italic;
+  }
+
+  /* KPI */
+  .kpi { background: var(--white); }
+  .kpi-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+    background: var(--smoke); margin-top: 56px;
+  }
+  .kpi-cell {
+    background: var(--white); padding: 36px 28px;
+  }
+  .kpi-val {
+    font-family: var(--serif);
+    font-size: 40px; font-weight: 700; color: var(--ink);
+    line-height: 1; margin-bottom: 8px; display: block;
+  }
+  .kpi-unit {
+    font-size: 14px; color: var(--stone);
+    font-family: var(--sans);
+  }
+  .kpi-label {
+    font-size: 12px; color: var(--stone);
+    letter-spacing: 0.04em; margin-top: 8px; line-height: 1.4;
+  }
+  .kpi-divider {
+    width: 24px; height: 1px; background: var(--gold);
+    margin: 14px 0;
+  }
+
+  /* VOICE RULES */
+  .voice { background: var(--ink-2); }
+  .voice .section-title { color: var(--white); }
+  .voice .section-label { color: var(--gold-lt); }
+  .voice .section-label::before { background: var(--gold-lt); }
+  .voice-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+    background: var(--ink-3); margin-top: 48px;
+  }
+  .voice-cell {
+    background: var(--ink-2); padding: 32px 28px;
+  }
+  .voice-col-head {
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .voice-cell:first-child .voice-col-head { color: var(--stone); }
+  .voice-cell:last-child .voice-col-head { color: var(--gold); }
+  .voice-row {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 14px 0; border-bottom: 1px solid var(--ink-3);
+    font-size: 13px; line-height: 1.5;
+  }
+  .voice-row:last-child { border-bottom: none; }
+  .voice-cell:first-child .voice-row { color: var(--stone); }
+  .voice-cell:last-child .voice-row { color: var(--mist); }
+  .v-icon { font-size: 14px; flex-shrink: 0; padding-top: 1px; }
+  .v-no { color: #E05555; }
+  .v-yes { color: var(--gold); }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    padding: 64px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-inner { max-width: 1100px; margin: 0 auto; width: 100%; display: flex; align-items: center; justify-content: space-between; }
+  .footer-brand {
+    font-family: var(--serif);
+    font-size: 22px; font-weight: 700;
+    color: var(--white); letter-spacing: 0.1em;
+  }
+  .footer-sub {
+    font-size: 10px; letter-spacing: 0.18em;
+    color: var(--stone); text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .footer-note {
+    font-size: 12px; color: var(--stone);
+    text-align: right; line-height: 1.6;
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--linen); }
+  ::-webkit-scrollbar-thumb { background: var(--mist); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-mark">
+      <svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 2h8.5C14.09 2 17 4.91 17 8.5S14.09 15 10.5 15H2V2zm3 3v7h5.5c2.21 0 4-1.79 4-3.5S12.71 5 10.5 5H5z"/>
+      </svg>
+    </div>
+    <div>
+      <span class="nav-brand">DOMINO</span>
+      <span class="nav-sub">Glass Kitchen</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#positioning">Định vị</a></li>
+    <li><a href="#pain">Khách hàng</a></li>
+    <li><a href="#content">Nội dung</a></li>
+    <li><a href="#ladder">Lộ trình</a></li>
+    <li><a href="#kpi">KPI</a></li>
+  </ul>
+  <span class="nav-badge">Kế hoạch 3 tháng</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">Chiến lược Fanpage 2024–2025</div>
+      <h1 class="hero-title">
+        Không bán<br>tủ bếp.<br>
+        <em>Dẫn dắt<br>quyết định.</em>
+      </h1>
+      <p class="hero-desc">
+        DOMINO xây dựng Fanpage như một showroom online — nơi khách hàng tự tìm đến niềm tin, không bị thuyết phục.
+      </p>
+      <div class="hero-meta">
+        <div>
+          <span class="hero-stat-val">3</span>
+          <span class="hero-stat-lbl">Tháng triển khai</span>
+        </div>
+        <div>
+          <span class="hero-stat-val">4</span>
+          <span class="hero-stat-lbl">Key nỗi đau cốt lõi</span>
+        </div>
+        <div>
+          <span class="hero-stat-val">24/7</span>
+          <span class="hero-stat-lbl">AI hỗ trợ khách</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-logo-wrap">
+      <div class="hero-logo-ring">
+        <div class="hero-logo-inner">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Test-Logo.svg/783px-Test-Logo.svg.png" alt="DOMINO Logo" style="display:none">
+          <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" width="110">
+            <text x="0" y="52" font-family="'Playfair Display', serif" font-size="52" font-weight="700" fill="#1C1A18" letter-spacing="-1">D</text>
+            <rect x="26" y="14" width="18" height="16" fill="white"/>
+            <rect x="26" y="32" width="8" height="16" fill="white"/>
+            <rect x="36" y="32" width="8" height="16" fill="white"/>
+            <rect x="30" y="10" width="1" height="38" fill="#1C1A18" opacity="0.15"/>
+            <rect x="26" y="30" width="19" height="1" fill="#1C1A18" opacity="0.15"/>
+            <text x="0" y="85" font-family="'Playfair Display', serif" font-size="20" font-weight="700" fill="#1C1A18" letter-spacing="6">OMINO</text>
+            <text x="8" y="98" font-family="'DM Sans', sans-serif" font-size="7" fill="#7A7875" letter-spacing="4">GLASS KITCHEN</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POSITIONING -->
+<section class="positioning" id="positioning">
+  <div class="section-inner">
+    <div class="positioning-grid">
+      <div>
+        <div class="section-label">Định vị thương hiệu</div>
+        <h2 class="section-title">Người đồng hành — không phải người bán hàng</h2>
+      </div>
+      <div>
+        <div class="pos-statement">
+          "DOMINO không hỏi khách muốn gì.<br>
+          DOMINO <em>định hình cách khách nghĩ</em> trước khi họ biết mình cần gì."
+        </div>
+        <div class="rules-list">
+          <div class="rule-item">
+            <span class="rule-no">01</span>
+            <span class="rule-text"><strong>Không chạy theo trend.</strong> Mỗi bài content phải có giá trị thật — không đăng vì cho có, không đăng vì hôm nay viral.</span>
+          </div>
+          <div class="rule-item">
+            <span class="rule-no">02</span>
+            <span class="rule-text"><strong>Dạy khách trước khi bán.</strong> Khách được trang bị kiến thức đủ để nhận ra ai đáng tin — rồi tự chọn DOMINO.</span>
+          </div>
+          <div class="rule-item">
+            <span class="rule-no">03</span>
+            <span class="rule-text"><strong>Key ẩn trong mọi nội dung.</strong> Mỗi bài giải quyết ít nhất một nỗi đau thầm lặng — không nói thẳng, chỉ chứng minh qua câu chuyện thật.</span>
+          </div>
+          <div class="rule-item">
+            <span class="rule-no">04</span>
+            <span class="rule-text"><strong>CTA nhẹ — không thúc ép.</strong> Khách tự inbox khi sẵn sàng, không phải vì bị ép. "Nếu bạn đang nghĩ đến..." thay vì "Liên hệ ngay!"</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN LOOP -->
+<section class="pain" id="pain">
+  <div class="section-inner">
+    <div class="section-label">Tâm lý khách hàng cận cao cấp</div>
+    <h2 class="section-title">Bốn nỗi đau thầm lặng<br>— nuôi nhau thành một vòng</h2>
+    <p class="pain-intro">
+      Khách hàng DOMINO không lo về giá. Họ lo về kiểm soát, quyết định, bản sắc và sự thật. Giải quyết một cái — ba cái kia tự giảm.
+    </p>
+    <div class="pain-grid">
+      <div class="pain-cell">
+        <div class="pain-num">Nỗi đau 01</div>
+        <div class="pain-surface">Họ nói: "Tôi muốn tìm hiểu thêm"</div>
+        <div class="pain-core">Sợ bỏ tiền lớn mà không kiểm soát được</div>
+        <div class="pain-signal">Thật ra: "Mình không biết thợ có làm đúng không, vật liệu có đúng loại không — và nếu sai thì không còn cách sửa."</div>
+      </div>
+      <div class="pain-cell">
+        <div class="pain-num">Nỗi đau 02</div>
+        <div class="pain-surface">Họ nói: "Tôi cần nghĩ thêm"</div>
+        <div class="pain-core">Sợ chọn sai — hối hận cả 10–20 năm</div>
+        <div class="pain-signal">Thật ra: "Lỡ làm xong không hợp nhà thật, màu khác, tỷ lệ lệch — mà không sửa lại được nữa."</div>
+      </div>
+      <div class="pain-cell">
+        <div class="pain-num">Nỗi đau 03</div>
+        <div class="pain-surface">Họ nói: "Tôi muốn cái gì đó khác một chút"</div>
+        <div class="pain-core">Muốn không gian phản chiếu đúng bản sắc riêng</div>
+        <div class="pain-signal">Thật ra: "Không muốn nhà mình giống hàng xóm, không muốn mẫu catalog ai cũng có — muốn cái của riêng mình."</div>
+      </div>
+      <div class="pain-cell">
+        <div class="pain-num">Nỗi đau 04</div>
+        <div class="pain-surface">Họ nói: "Cho tôi xem ảnh thực tế"</div>
+        <div class="pain-core">Sợ tiền thật — kết quả ảo</div>
+        <div class="pain-signal">Thật ra: "Hình showroom bao giờ cũng đẹp. Nhưng về nhà mình, ánh sáng mình, màu sẽ ra sao — không ai trả lời được."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT MATRIX -->
+<section class="matrix" id="content">
+  <div class="section-inner">
+    <div class="section-label">Ma trận nội dung</div>
+    <h2 class="section-title">Mỗi nhóm bài<br>mang một key ẩn</h2>
+    <p class="matrix-desc">
+      Không có bài nào đăng vô nghĩa. Mỗi bài viết, mỗi video đều được thiết kế để giải quyết ít nhất một trong bốn nỗi đau — một cách tự nhiên, không lộ liễu.
+    </p>
+    <table class="matrix-table">
+      <thead>
+        <tr>
+          <th>Nhóm nội dung</th>
+          <th>Bài viết / Caption</th>
+          <th>Video / Reels</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="mt-group">Công trình thực tế</div>
+            <div class="mt-pct">40% · BAB</div>
+          </td>
+          <td>
+            <div class="mt-formula">BAB — Trước · Sau · Cầu nối</div>
+            <div class="mt-how">Kể hành trình từ khảo sát → thi công → bàn giao. Luôn có chi tiết thật: ngày, diện tích, địa điểm cụ thể.</div>
+            <div class="mt-key">Key ẩn: "Tiền thật — kết quả thật. Không phải hình mẫu"</div>
+          </td>
+          <td>
+            <div class="mt-formula">Quay thực tế tại nhà khách</div>
+            <div class="mt-how">Trước thi công → trong quá trình → sau hoàn thiện. Góc thật, ánh sáng thật trong nhà khách — không set dựng.</div>
+            <div class="mt-key">Key ẩn: "Đây là nhà người thật — không phải showroom"</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="mt-group">Chia sẻ kiến thức</div>
+            <div class="mt-pct">20% · PAS</div>
+          </td>
+          <td>
+            <div class="mt-formula">PAS — Vấn đề · Khuếch đại · Giải pháp</div>
+            <div class="mt-how">Dạy khách nhận biết vật liệu tốt/xấu, đọc bản vẽ, kiểm tra thi công. Nói điều đơn vị khác không dám nói.</div>
+            <div class="mt-key">Key ẩn: "Khách có kiến thức = khách không bị lừa"</div>
+          </td>
+          <td>
+            <div class="mt-formula">Video tại xưởng — tay cầm vật liệu</div>
+            <div class="mt-how">Giải thích sự khác biệt vật liệu trực tiếp. Không diễn — chỉ cần thật và rõ ràng. DOMINO không giấu nghề.</div>
+            <div class="mt-key">Key ẩn: "Tự tin vào tay nghề nên không giấu quy trình"</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="mt-group">Câu chuyện khách hàng</div>
+            <div class="mt-pct">15% · Story</div>
+          </td>
+          <td>
+            <div class="mt-formula">Story thương hiệu</div>
+            <div class="mt-how">Không viết testimonial chung chung. Kể hành trình: khách đến với nỗi sợ gì, đồng hành thế nào, cảm nhận sau bàn giao.</div>
+            <div class="mt-key">Key ẩn: "Nỗi sợ của bạn — người khác đã từng sợ y vậy"</div>
+          </td>
+          <td>
+            <div class="mt-formula">Phỏng vấn tự nhiên sau bàn giao</div>
+            <div class="mt-how">Không đọc script. Hỏi: "Điều gì khiến anh/chị lo nhất trước khi quyết định?" Lời khách thật hơn bất kỳ quảng cáo nào.</div>
+            <div class="mt-key">Key ẩn: "Con người thật — không phải diễn viên thuê"</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="mt-group">Góc nhìn DOMINO</div>
+            <div class="mt-pct">10% · Chính kiến</div>
+          </td>
+          <td>
+            <div class="mt-formula">Hook–Value–CTA</div>
+            <div class="mt-how">"Tại sao DOMINO không làm theo mẫu sẵn có", "Vì sao chúng tôi từ chối một số dự án". Thương hiệu dám nói không.</div>
+            <div class="mt-key">Key ẩn: "Có giới hạn = có tiêu chuẩn"</div>
+          </td>
+          <td>
+            <div class="mt-formula">Người sáng lập nói thẳng vào camera</div>
+            <div class="mt-how">Không teleprompter. Ngắn, chắc, có quan điểm rõ ràng. Con người đứng sau thương hiệu — không phải logo.</div>
+            <div class="mt-key">Key ẩn: "Bạn biết mình đang làm việc với ai"</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- EDUCATION LADDER -->
+<section class="ladder" id="ladder">
+  <div class="section-inner">
+    <div class="section-label">Hành trình giáo dục khách hàng</div>
+    <h2 class="section-title">Từ người lạ<br>đến người tin tưởng</h2>
+    <div class="ladder-track">
+      <div class="ladder-step">
+        <div class="step-num">Giai đoạn 01 — Nhận diện</div>
+        <div class="step-name">"DOMINO là ai?"</div>
+        <div class="step-desc">Reels công trình đẹp, hook mạnh, dừng lướt, nhớ tên. Chưa cần bán gì — chỉ cần để lại dấu ấn đầu tiên.</div>
+        <div class="step-example">"Căn bếp này mất 21 ngày để hoàn thiện — đây là kết quả cuối cùng."</div>
+      </div>
+      <div class="ladder-step">
+        <div class="step-num">Giai đoạn 02 — Tò mò</div>
+        <div class="step-name">"DOMINO làm khác thế nào?"</div>
+        <div class="step-desc">Bài kiến thức, góc xưởng sản xuất, quy trình thật. Khách tự so sánh DOMINO với đơn vị khác trong đầu.</div>
+        <div class="step-example">"Tại sao DOMINO không dùng vật liệu X dù rẻ hơn 30%?"</div>
+      </div>
+      <div class="ladder-step">
+        <div class="step-num">Giai đoạn 03 — Tin tưởng</div>
+        <div class="step-name">"Người như mình đã chọn DOMINO"</div>
+        <div class="step-desc">Câu chuyện khách hàng thật. Khách nhìn thấy mình trong câu chuyện người khác — nỗi sợ giống nhau, kết quả tốt đẹp.</div>
+        <div class="step-example">"Chị Lan lo nhất điều này trước khi ký — và đây là điều đã xảy ra sau đó."</div>
+      </div>
+      <div class="ladder-step">
+        <div class="step-num">Giai đoạn 04 — Quyết định</div>
+        <div class="step-name">"Tôi muốn DOMINO đồng hành"</div>
+        <div class="step-desc">Khách tự inbox — không cần thúc ép. DOMINO không "chốt sale" mà "mở cửa đón". CTA luôn nhẹ và tự nhiên.</div>
+        <div class="step-example">"Nếu bạn đang nghĩ đến việc làm lại không gian bếp — bắt đầu từ đây."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KPI -->
+<section class="kpi" id="kpi">
+  <div class="section-inner">
+    <div class="section-label">Chỉ số triển khai</div>
+    <h2 class="section-title">KPI 3 tháng đầu</h2>
+    <div class="kpi-grid">
+      <div class="kpi-cell">
+        <span class="kpi-val">20–25</span>
+        <span class="kpi-unit">bài / tháng</span>
+        <div class="kpi-divider"></div>
+        <div class="kpi-label">Bài đăng tổng, phân bổ theo tỷ lệ ma trận nội dung</div>
+      </div>
+      <div class="kpi-cell">
+        <span class="kpi-val">8–12</span>
+        <span class="kpi-unit">video / tháng</span>
+        <div class="kpi-divider"></div>
+        <div class="kpi-label">Reels Facebook, tái sử dụng từ TikTok và bổ sung mới</div>
+      </div>
+      <div class="kpi-cell">
+        <span class="kpi-val">4–6</span>
+        <span class="kpi-unit">công trình / tháng</span>
+        <div class="kpi-divider"></div>
+        <div class="kpi-label">Bài công trình thực tế, tùy theo tiến độ dự án</div>
+      </div>
+      <div class="kpi-cell">
+        <span class="kpi-val">24/7</span>
+        <span class="kpi-unit">AI inbox</span>
+        <div class="kpi-divider"></div>
+        <div class="kpi-label">Hệ thống AI trả lời tự động, thu thập và chuyển lead</div>
+      </div>
+      <div class="kpi-cell">
+        <span class="kpi-val">1–3</span>
+        <span class="kpi-unit">story / ngày</span>
+        <div class="kpi-divider"></div>
+        <div class="kpi-label">Showroom, công trình đang thi công, mẫu mới, ưu đãi</div>
+      </div>
+      <div class="kpi-cell">
+        <span class="kpi-val">4</span>
+        <span class="kpi-unit">bài kiến thức / tháng</span>
+        <div class="kpi-divider"></div>
+        <div class="kpi-label">Giáo dục thị trường, định vị DOMINO là chuyên gia</div>
+      </div>
+      <div class="kpi-cell">
+        <span class="kpi-val">2</span>
+        <span class="kpi-unit">bài quy trình / tháng</span>
+        <div class="kpi-divider"></div>
+        <div class="kpi-label">Minh bạch hóa quy trình — xây dựng kiểm soát cho khách</div>
+      </div>
+      <div class="kpi-cell">
+        <span class="kpi-val">1×</span>
+        <span class="kpi-unit">cập nhật Fanpage / tháng</span>
+        <div class="kpi-divider"></div>
+        <div class="kpi-label">Ảnh bìa, phần giới thiệu, highlight story theo mùa</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOICE DO / DON'T -->
+<section class="voice">
+  <div class="section-inner">
+    <div class="section-label">Giọng điệu thương hiệu</div>
+    <h2 class="section-title">DOMINO nói<br>như thế này</h2>
+    <div class="voice-grid">
+      <div class="voice-cell">
+        <div class="voice-col-head">Không bao giờ</div>
+        <div class="voice-row"><span class="v-icon v-no">✕</span><span>"Inbox em báo giá ngay hôm nay!"</span></div>
+        <div class="voice-row"><span class="v-icon v-no">✕</span><span>"Sản phẩm chất lượng cao, giá cạnh tranh"</span></div>
+        <div class="voice-row"><span class="v-icon v-no">✕</span><span>"Ưu đãi sốc — chỉ còn hôm nay!"</span></div>
+        <div class="voice-row"><span class="v-icon v-no">✕</span><span>"Chúng tôi cam kết chất lượng tốt nhất"</span></div>
+        <div class="voice-row"><span class="v-icon v-no">✕</span><span>So sánh trực tiếp với đối thủ</span></div>
+        <div class="voice-row"><span class="v-icon v-no">✕</span><span>Caption chỉ là mô tả sản phẩm khô khan</span></div>
+      </div>
+      <div class="voice-cell">
+        <div class="voice-col-head">Luôn luôn</div>
+        <div class="voice-row"><span class="v-icon v-yes">→</span><span>"Nếu bạn đang nghĩ đến điều này, bắt đầu từ đây."</span></div>
+        <div class="voice-row"><span class="v-icon v-yes">→</span><span>Cho đi kiến thức thật trước khi đề cập đến DOMINO</span></div>
+        <div class="voice-row"><span class="v-icon v-yes">→</span><span>Kể câu chuyện — không đọc tính năng sản phẩm</span></div>
+        <div class="voice-row"><span class="v-icon v-yes">→</span><span>Thừa nhận giới hạn: "DOMINO không phù hợp nếu..."</span></div>
+        <div class="voice-row"><span class="v-icon v-yes">→</span><span>Con người thật đứng sau mỗi bài: tên, mặt, quan điểm</span></div>
+        <div class="voice-row"><span class="v-icon v-yes">→</span><span>CTA nhẹ, không ép: comment — inbox — gặp — quyết định</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">DOMINO</div>
+      <div class="footer-sub">Glass Kitchen · Thái Bình</div>
+    </div>
+    <div class="footer-note">
+      Kế hoạch Fanpage 3 tháng · 2024–2025<br>
+      Tài liệu nội bộ — trình ban lãnh đạo
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
